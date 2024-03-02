@@ -17,24 +17,9 @@ class Cliente {
     }
 
     calcularImpuesto() {
-        const impuesto = (this.impuesto._montoBrutoAnual - this.impuesto._deducciones) * 0.21;
-        if (this.impuesto._montoBrutoAnual < 0) {
-            console.log("Estimado favor de entregar un monto positivo");
-        } else if (typeof this.impuesto._montoBrutoAnual !== "number") {
-            console.log("Estimado favor de entregar un monto válido");
-        }
-
-        if (this.impuesto._deducciones < 0) {
-            console.log("Estimado favor de entregar un número positivo para deducciones");
-        } else if (typeof this.impuesto._deducciones !== "number") {
-            console.log("Estimado favor de entregar un número válido para deducciones");
-        }
-
-        if (this.impuesto._deducciones > this.impuesto._montoBrutoAnual) {
-            console.log("Queda exonerado de Impuestos Anuales");
-        }
+        const impuesto = (this.impuesto.brutoAnual - this.impuesto.deducciones) * 0.21;
         return impuesto;
-
     }
 }
 export default Cliente;
+
